@@ -47,7 +47,7 @@ e_frontier = { # Chinese army
 	}
 }
 
-e_swahili = {
+e_maziwa = {
 	color = { 238 10 10 }
 
 	color2= { 255 255 255 }
