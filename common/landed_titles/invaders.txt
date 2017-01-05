@@ -1,0 +1,62 @@
+	
+### INVADERS
+
+e_hwanguk = {
+	color = { 0 155 58 }
+	color2= { 255 255 255 }
+
+	# Always exists
+	landless = yes
+	dynasty_title_names = no
+	short_name = no
+	dignity = 90 #have you seen that map?
+	allow = {
+		always = no
+	}
+}
+
+e_koroni = { # Japan
+	color = { 238 238 238 }
+
+	color2= { 255 255 255 }
+
+
+	# Always exists
+	landless = yes
+	dynasty_title_names = no
+	short_name = no
+	dignity = 50
+	allow = {
+		always = no
+	}
+}
+
+e_frontier = { # Chinese army
+	color = { 238 238 238 }
+
+	color2= { 255 255 255 }
+
+
+	# Always exists
+	landless = yes
+	dynasty_title_names = no
+	short_name = no
+	dignity = 50
+	allow = {
+		always = no
+	}
+}
+
+e_swahili = {
+	color = { 238 10 10 }
+
+	color2= { 255 255 255 }
+
+	# Always exists
+	landless = yes
+	short_name = no
+	dignity = 50 
+	allow = {
+		always = no
+	}
+}
