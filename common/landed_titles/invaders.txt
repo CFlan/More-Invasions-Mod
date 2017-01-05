@@ -32,7 +32,7 @@ e_koroni = { # Japan
 }
 
 e_frontier = { # Chinese army
-	color = { 238 238 238 }
+	color = {144 131 175}
 
 	color2= { 255 255 255 }
 
