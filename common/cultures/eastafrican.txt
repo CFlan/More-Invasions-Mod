@@ -2,7 +2,7 @@ eastafrican = {
 	graphical_cultures = { africangfx }
 
 	#credit to cybrxkhan
-	swahili = {
+	 waswahili = {
        graphical_cultures = { africangfx westafricangfx }
 		secondary_event_pictures = bedouin_arabic
       
