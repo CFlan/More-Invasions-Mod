@@ -1,0 +1,731 @@
+
+
+# Rising Sun
+narrative_event = {
+	id = 177501
+	title = "colony.1.name"
+	desc = colony.1.desc
+	major = yes
+	   
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	   
+	only_playable = yes
+	hide_from = yes
+	   
+	trigger = {
+		year = 1250
+		   
+		religion = catholic
+		controls_religion = yes # Let it happen for the Pope - he's always around
+		   
+		NOT = { has_global_flag = samurai_rumors }
+		NOT = { has_global_flag = samurai_arrival }
+	}
+	   
+	mean_time_to_happen = {
+		months = 1
+	}
+	   
+	immediate = {
+		set_global_flag = samurai_rumors
+		activate_title = { title = e_koroni status = yes }
+		create_character = {
+			random_traits = no
+			dynasty = 1243000 # Hojo
+			name = "Yoshinari"
+			culture = japanese
+			religion = shinto
+			age = 30
+			attributes = {
+				martial = 7
+				diplomacy = 3
+				stewardship = 5
+				intrigue = 4
+				learning = 3
+			}
+			health = 5
+			fertility = 0.5
+			trait = brilliant_strategist
+			trait = wroth
+			trait = proud
+			trait = ambitious
+			trait = quick
+			trait = patient
+			trait = brave
+		}
+		new_character = {
+			e_koroni = {
+				grant_title = PREV
+			}
+			set_defacto_liege = THIS
+			set_character_flag = horde_invader
+			military_techpoints = 1000
+			economy_techpoints = 1000
+			culture_techpoints = 1000
+			#character_event = { id = misc.3 } # Diversity
+		}
+		   
+	}
+	   
+	option = {
+		name = "colony.1.optA"
+	}
+}
+ 
+# Arrival of the Samurai
+narrative_event = {
+	id = 177502
+	title = colony.2.name
+	desc = "colony.2.desc"
+	major = yes
+	hide_new = yes
+	   
+	picture = "GFX_evt_mongols"
+	border = "GFX_event_narrative_frame_war"
+	   
+	only_playable = yes
+	   
+	trigger = {
+		year = 2816
+		has_landed_title = e_koroni
+		NOT = { has_global_flag = samurai_arrival }
+	}
+	   
+	mean_time_to_happen = {
+		months = 12
+	}
+	   
+	option = {
+		name = "OK"
+		trigger = {
+			has_landed_title = e_koroni
+			culture = japanese
+		}
+		set_global_flag = samurai_arrival
+		
+		# Samurai attack the lands around Ceylon
+		1195 = {	# Ceylon
+			any_neighbor_province = {
+				any_neighbor_province = {
+					kingdom = {
+						ROOT = {
+							war = {
+								casus_belli = tribal_invasion
+								target = PREVPREV
+								thirdparty_title = PREV
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		wealth = 5000
+		create_character = {
+			random_traits = yes
+			dynasty = 1243004
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1195 # Plymouth
+				troops =
+				{
+					light_infantry = { 2241 2241 }
+					heavy_infantry = { 3010 3010 }
+					light_cavalry = { 1500 1500 }
+					knights = { 1024 1024 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = 1243001
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 35
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1195 # Plymouth
+				troops =
+				{
+					archers = { 2620 2620 }
+					light_infantry = { 1100 1100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 39
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1195 # Plymouth
+				troops =
+				{
+					archers = { 2620 2620 }
+					light_infantry = { 2100 2100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		   
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1195 # Plymouth
+				troops =
+				{
+					archers = { 1620 1620 }
+					light_infantry = { 2100 2100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 35
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1194 # Plymouth
+				troops =
+				{
+					archers = { 1620 1620 }
+					light_infantry = { 1100 1100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = 1243066
+			name = "Charlie"
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 20
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1414 # Plymouth
+				troops =
+				{
+					archers = { 2620 2620 }
+					light_infantry = { 4100 4100 }
+					heavy_infantry = { 3230 3230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1414 # Plymouth
+				troops =
+				{
+					archers = { 1620 1620 }
+					light_infantry = { 1100 1100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = 1243007
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 35
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1414 # Plymouth
+				troops =
+				{
+					archers = { 1620 1620 }
+					light_infantry = { 2100 2100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = 1243088
+			name = "Satoru"
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 39
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = genius
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1195 # Plymouth
+				troops =
+				{
+					archers = { 1620 1620 }
+					light_infantry = { 1100 1100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		   
+		create_character = {
+			random_traits = yes
+			dynasty = 1243024
+			name = "Shigeru"
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = genius
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1215 # Merrimack
+				troops =
+				{
+					archers = { 2620 2620 }
+					light_infantry = { 3100 3100 }
+					heavy_infantry = { 2230 2230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = 1243046 #Kojima
+			name = "Hideo"
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 35
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+			trait = lunatic #Kojima
+			trait = ambitious
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1279 # Merrimack
+				troops =
+				{
+					archers = { 3620 3620 }
+					light_infantry = { 4100 4100 }
+					heavy_infantry = { 2230 2230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = 1243060
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 59
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1112 # Merrimack
+				troops =
+				{
+					archers = { 2620 2620 }
+					light_infantry = { 3100 3100 }
+					heavy_infantry = { 2230 2230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		new_character = {
+			spawn_unit = {
+				province = 1112 # Merrimack
+				troops =
+				{
+					archers = { 1620 1620 }
+					light_infantry = { 1100 1100 }
+					heavy_infantry = { 1230 1230 }
+				}
+				attrition = 0.25
+			}
+			#character_event = { id = misc.3 } # Diversity
+		}
+		   
+ 
+		random = {
+			chance = 50
+			   
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = shinto
+				culture = japanese
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1194 # Hartford
+					troops =
+					{
+						light_cavalry = { 960 960 }
+						archers = { 1620 1620 }
+						light_infantry = { 1100 1100 }
+						heavy_infantry = { 1230 1230 }
+					}
+					attrition = 0.25
+				}
+				character_event = { id = misc.3 } # Diversity
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = shinto
+				culture = japanese
+				female = no
+				age = 45
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1279 # Hartford
+					troops =
+					{
+						light_cavalry = { 960 960 }
+						archers = { 1620 1620 }
+						light_infantry = { 1100 1100 }
+						heavy_infantry = { 1230 1230 }
+					}
+					attrition = 0.25
+				}
+				character_event = { id = misc.3 } # Diversity
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = shinto
+				culture = japanese
+				female = no
+				age = 39
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1214 # Hartford
+					troops =
+					{
+						light_cavalry = { 960 960 }
+						archers = { 1620 1620 }
+						light_infantry = { 1100 1100 }
+						heavy_infantry = { 1230 1230 }
+					}
+					attrition = 0.25
+				}
+				character_event = { id = misc.3 } # Diversity
+			}
+		}
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = shinto
+				culture = japanese
+				female = no
+				age = 39
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1115 # Hartford
+					troops =
+					{
+						light_cavalry = { 960 960 }
+						archers = { 1620 1620 }
+						light_infantry = { 1100 1100 }
+						heavy_infantry = { 1230 1230 }
+					}
+					attrition = 0.25
+				}
+				character_event = { id = misc.3 } # Diversity
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = shinto
+				culture = japanese
+				female = no
+				age = 39
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1115 # Hartford
+					troops =
+					{
+						light_cavalry = { 960 960 }
+						archers = { 1620 1620 }
+						light_infantry = { 1100 1100 }
+						heavy_infantry = { 1230 1230 }
+					}
+					attrition = 0.25
+				}
+				character_event = { id = misc.3 } # Diversity
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = shinto
+				culture = japanese
+				female = no
+				age = 39
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = 1414 # Hartford
+					troops =
+					{
+						light_cavalry = { 960 960 }
+						archers = { 1620 1620 }
+						light_infantry = { 1100 1100 }
+						heavy_infantry = { 1230 1230 }
+					}
+					attrition = 0.25
+				}
+				character_event = { id = misc.3 } # Diversity
+			}
+		}
+		   
+		# Some extra courtiers
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 16
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 18
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 18
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 20
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 25
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 26
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = no
+			age = 28
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = yes
+			age = 16
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = yes
+			age = 17
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = yes
+			age = 18
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = yes
+			age = 18
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = shinto
+			culture = japanese
+			female = yes
+			age = 20
+		}
+		new_character = { character_event = { id = misc.3 } } # Diversity
+	}
+	option = {
+		name = "colony.2.optA"
+		trigger = {
+			NOT = { has_landed_title = e_koroni }
+		}
+	}
+	}

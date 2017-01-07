@@ -20,7 +20,7 @@ e_koroni = { # Japan
 
 	color2= { 255 255 255 }
 
-
+	capital = 1115
 	# Always exists
 	landless = yes
 	dynasty_title_names = no

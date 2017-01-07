@@ -34,7 +34,7 @@ eastasian = {
 	}
 	
 	#Credit cybrxkhan
-	chinese = {
+	han = {
 
 	   graphical_cultures = { mongolgfx }
        color = { 0.99 0.99 0.01 }
